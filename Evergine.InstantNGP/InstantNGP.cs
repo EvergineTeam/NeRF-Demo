@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿// Copyright © Plain Concepts S.L.U. All rights reserved. Use is subject to license terms.
+
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace Evergine.InstantNGP

@@ -1,5 +1,8 @@
+using Evergine.Common.Graphics;
 using Evergine.Components.Graphics3D;
 using Evergine.Framework;
+using Evergine.Framework.Graphics;
+using Evergine.Mathematics;
 using NeRFDemo.Components;
 using NeRFDemo.Effects;
 using System.Linq;
@@ -20,10 +23,37 @@ namespace NeRFDemo
 
         protected override void CreateScene()
         {
-            this.ngp = new InstantNGPBehavior() { NerfPath = "Data/fox"};            
+            // Cameras           
+            var cameraEntity = new Entity("Camera3D") 
+                                .AddComponent(new Transform3D()
+                                {
+                                    LocalPosition = new Vector3(0, 2, 4),
+                                })                
+                                .AddComponent(new Camera3D()
+                                {                    
+                                    HDREnabled = true, 
+                                    BackgroundColor = Color.Black, 
+                                })
+                                .AddComponent(new InstantNGPBehavior() { NerfPath = "Data/fox" })
+                                ;
 
-            var camera = this.Managers.EntityManager.FindAllByTag("MainCamera").First();
-            camera.AddComponent(this.ngp);
+            this.ngp = cameraEntity.FindComponent<InstantNGPBehavior>();
+            cameraEntity.FindComponent<Transform3D>().LookAt(Vector3.Zero);
+            
+            var parentCameraEntity = new Entity() 
+                                .AddComponent(new Transform3D()) 
+                                .AddComponent(new CameraBehavior(
+                                                        CameraBehavior.Modes.Orbit | 
+                                                        CameraBehavior.Modes.Zoom)
+                                             );
+
+            var childCameraEntity = new Entity() 
+                                .AddComponent(new Transform3D()); 
+
+            parentCameraEntity.AddChild(childCameraEntity); 
+            childCameraEntity.AddChild(cameraEntity);
+            
+            this.Managers.EntityManager.Add(parentCameraEntity);             
 
             Entity plane = this.Managers.EntityManager.FindAllByTag("Screen").First();
             var materialComponent = plane.FindComponent<MaterialComponent>();
