@@ -1,0 +1,2 @@
+Evergine.InstantNGP/runtimes/**/*.dll filter=lfs diff=lfs merge=lfs -text
+Evergine.InstantNGP/runtimes/**/*.pdb filter=lfs diff=lfs merge=lfs -text
