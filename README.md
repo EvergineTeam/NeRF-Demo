@@ -15,11 +15,11 @@ We have created a code example that showcases an industrial heat pump that has b
 You can generate your own NeRF models and add them to the sample. You will need to record a video or capture a collection of images with your mobile device or video camera of the object or environment you wish to represent. Then, you can train the model using [Instant-ngp](https://github.com/NVlabs/instant-ngp) and generate the transform.json files containing the positions of each image used to train the model, along with the base.ingp file that includes the training performed on the network (we recommend performing more than 35,000 iterations to ensure good model definition).
 
 Our recommendations for capturing images or videos for generating a NeRF model would be:
-•	Ensure good lighting. 
-•	Use a high-definition HD or 4K camera. 
-•	Use a wide-angle lens.
-•	Keep a low shutter speed (to avoid blurry images) 
-•	Keep the exposure consistent throughout the recording.
+-	Ensure good lighting. 
+-	Use a high-definition HD or 4K camera. 
+-	Use a wide-angle lens.
+-	Keep a low shutter speed (to avoid blurry images) 
+-	Keep the exposure consistent throughout the recording.
 
 
 ---
