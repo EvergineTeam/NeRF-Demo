@@ -44,7 +44,7 @@ namespace NeRFDemo.Components
             {
                 InstantNGP.initialize(
                     NerfPath,
-                    Path.Combine(NerfPath, "base.msgpack"),
+                    Path.Combine(NerfPath, "base.ingp"),
                     true);
             }
             catch (System.Runtime.InteropServices.SEHException e)

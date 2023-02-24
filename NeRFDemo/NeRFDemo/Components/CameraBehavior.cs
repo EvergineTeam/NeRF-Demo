@@ -212,16 +212,17 @@ namespace NeRFDemo.Components
                 if (this.mouseDispatcher.ScrollDelta.Y != 0)
                 {
                     Vector3 direction = this.Transform.LocalPosition - this.cameraTransform.Position;
-                    ////Debug.WriteLine($"Length: {direction.Length()} delta:{mouseDispatcher.ScrollDelta.Y}");
+                    var length = direction.Length();
+                    direction.Normalize();
+
                     Vector3 increment;
-                    if (direction.Length() < 5)
+
+                    if (length < 5)
                     {
-                        direction.Normalize();
                         increment = direction * MathHelper.Clamp((float)this.mouseDispatcher.ScrollDelta.Y, -1, 1);
                     }
                     else
                     {
-                        direction.Normalize();
                         increment = direction * (float)this.mouseDispatcher.ScrollDelta.Y;
                     }
 
@@ -231,6 +232,7 @@ namespace NeRFDemo.Components
                     {
                         this.cameraTransform.Position = desiredPosition;
                     }
+
                 }
             }
         }

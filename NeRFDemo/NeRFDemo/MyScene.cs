@@ -27,14 +27,14 @@ namespace NeRFDemo
             var cameraEntity = new Entity("Camera3D") 
                                 .AddComponent(new Transform3D()
                                 {
-                                    LocalPosition = new Vector3(0, 2, 4),
+                                    LocalPosition = new Vector3(0, 0, 4),
                                 })                
                                 .AddComponent(new Camera3D()
                                 {                    
                                     HDREnabled = true, 
                                     BackgroundColor = Color.Black, 
                                 })
-                                .AddComponent(new InstantNGPBehavior() { NerfPath = "Data/fox" })
+                                .AddComponent(new InstantNGPBehavior() { NerfPath = "Data/water_pump" })
                                 ;
 
             this.ngp = cameraEntity.FindComponent<InstantNGPBehavior>();
@@ -44,7 +44,8 @@ namespace NeRFDemo
                                 .AddComponent(new Transform3D()) 
                                 .AddComponent(new CameraBehavior(
                                                         CameraBehavior.Modes.Orbit | 
-                                                        CameraBehavior.Modes.Zoom)
+                                                        CameraBehavior.Modes.Zoom |
+                                                        CameraBehavior.Modes.Pan)
                                              );
 
             var childCameraEntity = new Entity() 
