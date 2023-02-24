@@ -78,10 +78,10 @@ Items:
       - !Evergine.Framework.Graphics.PhotometricDirectionalLight,Evergine.Framework
         Id: 5f6768ca-a7e6-4ab7-82b2-d9b3c42d111f
         Color:
-          A: 255
-          B: 253
-          G: 248
-          R: 255
+          A: 0
+          B: 228
+          G: 240
+          R: 249
         ColorByTemperature: true
         DebugMode: false
         GammaDistribution: 0.800000012
@@ -90,10 +90,10 @@ Items:
         IsEnabled: true
         IsShadowEnabled: true
         LinearColor:
-          A: 1.0
-          B: 0.982790232
-          G: 0.943362474
-          R: 1.0
+          A: 0.0
+          B: 0.77908951
+          G: 0.874792635
+          R: 0.9453125
         ShadowBias: 0.00499999989
         ShadowDistance: 80.0
         ShadowOpacity: 1.0

@@ -30,6 +30,8 @@ namespace NeRFDemo.Components
         [IgnoreEvergine]
         public string NerfPath { get; set; }
 
+        private Matrix4x4 lastCameraMatrix;
+
         /// <inheritdoc/>
         protected override bool OnAttached()
         {
@@ -90,20 +92,26 @@ namespace NeRFDemo.Components
         protected override void Update(TimeSpan gameTime)
         {
             var camera = this.Managers.RenderManager.ActiveCamera3D;
-            Vector3 left_positionPos = camera.Transform.Position;
-            Vector3 left_forwardPos = camera.Transform.WorldTransform.Forward;
-            Vector3 left_upPos = camera.Transform.WorldTransform.Up;
-            Vector3 left_rightPos = camera.Transform.WorldTransform.Right;
 
-            float[] camera_matrix = new float[3 * 4]
+            if (camera.Transform.WorldTransform != this.lastCameraMatrix)
             {
+                Vector3 left_positionPos = camera.Transform.Position;
+                Vector3 left_forwardPos = camera.Transform.WorldTransform.Forward;
+                Vector3 left_upPos = camera.Transform.WorldTransform.Up;
+                Vector3 left_rightPos = camera.Transform.WorldTransform.Right;
+
+                float[] camera_matrix = new float[3 * 4]
+                {
                 left_rightPos.X,    left_rightPos.Y,    left_rightPos.Z,
                 left_upPos.X,       left_upPos.Y,       left_upPos.Z,
                 left_forwardPos.X,  left_forwardPos.Y,  left_forwardPos.Z,
                 left_positionPos.X, left_positionPos.Y, left_positionPos.Z
-            };
+                };
 
-            InstantNGP.update_textures(camera_matrix);
+                InstantNGP.update_textures(camera_matrix);
+            }
+
+            this.lastCameraMatrix = camera.Transform.WorldTransform;
         }
 
         /// <inheritdoc/>

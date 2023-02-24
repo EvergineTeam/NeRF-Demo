@@ -16,14 +16,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="..\..\Data\water_pump\images\*.*">
-			<Link>Data\water_pump\images\%(RecursiveDir)\%(FileName)%(Extension)</Link>
+		<Content Include="..\..\Data\heat_pump\images\*.*">
+			<Link>Data\heat_pump\images\%(RecursiveDir)\%(FileName)%(Extension)</Link>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="..\..\Data\water_pump\transforms.json" Link="Data\water_pump\transforms.json">
+		<Content Include="..\..\Data\heat_pump\transforms.json" Link="Data\heat_pump\transforms.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<None Include="..\..\Data\water_pump\base.ingp" Link="Data\water_pump\base.ingp">
+		<None Include="..\..\Data\heat_pump\base.ingp" Link="Data\heat_pump\base.ingp">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
