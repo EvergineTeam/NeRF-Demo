@@ -1,34 +1,30 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<OutputType>Exe</OutputType>
-		<TargetFramework>net6.0-windows</TargetFramework>
-		<UseWindowsForms>true</UseWindowsForms>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Evergine.OpenGL" Version="2023.2.23.1-nightly" />
-		<PackageReference Include="Evergine.HLSLEverywhere" Version="2023.2.23.1-nightly" />
-		<PackageReference Include="Evergine.XAudio2" Version="2023.2.23.1-nightly" />
-		<PackageReference Include="Evergine.Forms" Version="2023.2.23.1-nightly" />
-		<PackageReference Include="Evergine.Targets" Version="2023.2.23.1-nightly" />
-		<PackageReference Include="Evergine.Targets.Windows" Version="2023.2.23.1-nightly" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Content Include="..\..\Data\heat_pump\images\*.*">
-			<Link>Data\heat_pump\images\%(RecursiveDir)\%(FileName)%(Extension)</Link>
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="..\..\Data\heat_pump\transforms.json" Link="Data\heat_pump\transforms.json">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<None Include="..\..\Data\heat_pump\base.ingp" Link="Data\heat_pump\base.ingp">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
-	</ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\NeRFDemo\NeRFDemo.csproj" />
-	</ItemGroup>
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Evergine.OpenGL" Version="2023.3.1.1" />
+    <PackageReference Include="Evergine.HLSLEverywhere" Version="2023.3.1.1" />
+    <PackageReference Include="Evergine.XAudio2" Version="2023.3.1.1" />
+    <PackageReference Include="Evergine.Forms" Version="2023.3.1.1" />
+    <PackageReference Include="Evergine.Targets" Version="2023.3.1.1" />
+    <PackageReference Include="Evergine.Targets.Windows" Version="2023.3.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\Data\heat_pump\images\*.*">
+      <Link>Data\heat_pump\images\%(RecursiveDir)\%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\Data\heat_pump\transforms.json" Link="Data\heat_pump\transforms.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="..\..\Data\heat_pump\base.ingp" Link="Data\heat_pump\base.ingp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NeRFDemo\NeRFDemo.csproj" />
+  </ItemGroup>
 </Project>
