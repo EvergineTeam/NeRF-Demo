@@ -22,6 +22,9 @@ Just open the Visual Studio OpenGL solution and start debugging the project.
 * Git LFS
 * Cuda 12 [https://developer.nvidia.com/cuda-downloads](https://developer.nvidia.com/cuda-downloads)
 
+## Build and Run
+This project must be compiled and run from the **OpenGL** solution _(NeRFDemo.Windows.OpenGL.sln)_
+
 ## Create your own NeRF model
 
 You can generate your own NeRF models and add them to the sample. You will need to record a video or capture a collection of images with your mobile device or video camera of the object or environment you wish to represent. Then, you can train the model using [Instant-ngp](https://github.com/NVlabs/instant-ngp) and generate the transform.json files containing the positions of each image used to train the model, along with the base.ingp file that includes the training performed on the network (we recommend performing more than 35,000 iterations to ensure good model definition).
