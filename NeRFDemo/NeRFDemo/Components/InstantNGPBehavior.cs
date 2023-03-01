@@ -52,7 +52,7 @@ namespace NeRFDemo.Components
             catch (System.Runtime.InteropServices.SEHException e)
             {
                 var path = Path.GetFullPath(NerfPath);
-                throw new FileNotFoundException($"Could not find nerf scene at '{path}', or its checkpoint 'base.msgpack'", e);
+                throw new FileNotFoundException($"Could not find nerf scene at '{path}', or its checkpoint 'base.ingp'", e);
             }
 
             return true;
