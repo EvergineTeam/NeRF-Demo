@@ -20,6 +20,7 @@ Just open the Visual Studio OpenGL solution and start debugging the project.
 * Visual Studio 2022 with.NET6 support
 * NVidia Graphics card RTX serie 2, 3 or 4.
 * Git LFS
+* Cuda 12 [https://developer.nvidia.com/cuda-downloads](https://developer.nvidia.com/cuda-downloads)
 
 ## Create your own NeRF model
 
