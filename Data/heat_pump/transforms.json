@@ -10,7 +10,8 @@
   "k2": -0.031238856,
   "p1": 0.00015755503,
   "p2": -0.0006262892,
-  "aabb_scale": 4,
+  "aabb_scale": 16,
+  "scale": 1,
   "frames": [
     {
       "file_path": "images/frame_00001.jpg",
