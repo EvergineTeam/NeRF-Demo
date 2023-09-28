@@ -6,8 +6,8 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Evergine.Framework" Version="2023.9.27.597-nightly" />
-    <PackageReference Include="Evergine.OpenGL" Version="2023.9.27.597-nightly" />
+    <PackageReference Include="Evergine.Framework" Version="2023.9.28.510" />
+    <PackageReference Include="Evergine.OpenGL" Version="2023.9.28.510" />
   </ItemGroup>
   <ItemGroup>
     <None Update="runtimes\**\*.dll">
